@@ -1,0 +1,23 @@
+{
+  "name": "v_camp-todo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andradeviniicius/V_Camp-ToDo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andradeviniicius/V_Camp-ToDo/issues"
+  },
+  "homepage": "https://github.com/andradeviniicius/V_Camp-ToDo#readme",
+  "dependencies": {
+    "vite": "^2.9.7"
+  }
+}
