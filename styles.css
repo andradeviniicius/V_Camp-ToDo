@@ -86,6 +86,7 @@ header nav ul .addNewTaskInput form input {
     flex-grow: 2;
     background: none;
     border: none;
+    font-size: 1rem;
 }
 
 header nav ul .addNewTaskInput form input:focus {
@@ -175,37 +176,41 @@ main section h1 {
 }
 
 main section nav {
-    width: 80%;
+    margin: 0px 126px;
+    width: 64rem;
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
     flex-direction: column;
 }
 
 main section ul {
     display: flex;
-    justify-content: space-between;
+    width: 100%;
+
     flex-flow: row wrap;
     gap: 3.25rem;
-
 }
 
 main section ul li {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
+
     align-items: center;
     gap: 1.6875rem;
 
     background-color: #38404B;
 
-    height: 3.6875rem;
+    /* height: 3.6875rem; */
+    height: fit-content;
     width: 28.0625rem;
 
     border-radius: 1rem;
     text-align: start;
 
     padding-left: 2.35rem;
+    padding: 1.1875rem 2.35rem;
     border: none;
 
     box-shadow:
@@ -223,11 +228,11 @@ main section ul li p {
 main .onGoingTasks {}
 
 main .completedTasksSection nav {
-    align-items: flex-start;
 }
 
 main .completedTasksSection nav h1 {
     margin-bottom: 3.25rem;
+    width: 100%;
 }
 
 main .completedTasksSection nav ul li {
@@ -278,9 +283,21 @@ footer {
     transform: rotate(0deg);
 }
 
+@media (min-height: 768px) {
+    main section ul {
+    }
+
+}
+
 @media (max-width: 768px) {
     header nav ul .addNewTaskInput form {
         width: 25.125rem;
+    }
+    main section nav {
+        width: 80%;
+    }
+    main section ul {
+        justify-content: center;
     }
 }
 
@@ -309,6 +326,7 @@ footer {
 
     main section ul {
         justify-content: center;
+        align-items: flex-start;
     }
 
     main section nav ul {
