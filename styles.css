@@ -173,6 +173,7 @@ main section {
 main section h1 {
     font-size: 1.75rem;
     font-weight: 400;
+    margin-left: 41px;
 }
 
 main section nav {
@@ -187,7 +188,8 @@ main section nav {
 main section ul {
     display: flex;
     width: 100%;
-
+    margin-left: 42px;
+    margin-right: -42px;
     flex-flow: row wrap;
     gap: 3.25rem;
 }
@@ -284,12 +286,20 @@ footer {
 }
 
 @media (min-height: 768px) {
-    main section ul {
-    }
-
+  
+    
 }
 
 @media (max-width: 768px) {
+    main section ul {
+    }
+    main section h1 {
+        margin-left: 0px;
+    }
+    main section ul {
+        margin-left: 0px;
+        margin-right: 0px;
+    }
     header nav ul .addNewTaskInput form {
         width: 25.125rem;
     }
