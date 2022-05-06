@@ -11,9 +11,9 @@ function addListenerToInputs() {
     checkbox.forEach(check => {
         check.addEventListener('click', e => {
             if (check.checked === true) {
-                completedTasksHandler(check)
+                completedTasksHandler(check.parentElement)
             } else {
-                onGoingTasksHandler(check)
+                onGoingTasksHandler(check.parentElement)
             }
         })
     })
