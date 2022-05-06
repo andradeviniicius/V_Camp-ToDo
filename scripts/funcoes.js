@@ -1,16 +1,14 @@
-const onGoingTasks = []
-const completedTasks = []
+const allTasks = []
 
 function createTask(taskName) {
-    const formattedTask = taskName.charAt(0).toUpperCase() + taskName.slice(1)
+    const formattedTask = taskName.charAt(0).toUpperCase()+taskName.slice(1)
 
     taskObj = {
         description: formattedTask,
         checked: false
     }
-
     
-    onGoingTasks.push(taskObj)
+    allTasks.push(taskObj)
 
     showTasksInScreen()
 }
@@ -18,35 +16,38 @@ function createTask(taskName) {
 function showTasksInScreen() {
 
     let onGoingTaskGrid = document.getElementById('onGoingTaskGrid')
+    let completedTaskGrid = document.getElementById('completedTaskGrid')
 
-    sortArray(onGoingTasks)
+    sortArray(allTasks)
 
-    let newOnGoingTaskGrid = `<ul class="onGoingTaskGrid"> `
 
-    onGoingTasks.forEach((task) => {
-        if(task.checked===true){
+    
+    let newCompletedTaskGrid = `<ul class="completedTaskGrid">`
+    let newOnGoingTaskGrid = `<ul class="onGoingTaskGrid">`
 
+    allTasks.forEach((task) => {
+        if(task.checked==true){
+            newCompletedTaskGrid += `<li id="taskBox"><input type="checkbox"><p>${task.description}</p></li>`
         } else {
             newOnGoingTaskGrid += `<li id="taskBox"><input type="checkbox"><p>${task.description}</p></li>`
         }
     })
 
     newOnGoingTaskGrid += `</ul>`
+    completedTaskGrid += `</ul>`
 
     onGoingTaskGrid.innerHTML = newOnGoingTaskGrid
+    completedTaskGrid.innerHTML = newCompletedTaskGrid
     addListenerToInputs()
 }
 
 function onGoingTasksHandler(taskUncheck) {
-    onGoingTasks[onGoingTasks.findIndex(task=>{return task.description === taskUncheck.lastElementChild.innerText})].checked = false
+    allTasks[allTasks.findIndex(task=>{return task.description === taskUncheck.lastElementChild.innerText})].checked = false
     
-    onGoingTaskGrid.firstChild.appendChild(taskUncheck)
     showTasksInScreen()
 }
 function completedTasksHandler(taskChecked) {
-    onGoingTasks[onGoingTasks.findIndex(task=>{return task.description === taskChecked.lastElementChild.innerText})].checked = true
+    allTasks[allTasks.findIndex(task=>{return task.description === taskChecked.lastElementChild.innerText})].checked = true
     
-    let completedTaskGrid = document.getElementById('completedTaskGrid')
-    completedTaskGrid.appendChild(taskChecked)
     showTasksInScreen()
 }
