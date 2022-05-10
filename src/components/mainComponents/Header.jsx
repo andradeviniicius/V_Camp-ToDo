@@ -1,16 +1,13 @@
 import React from "react";
 import "./../Global.css";
 
-
-
-    interface ToggleProps {
-        ClickHandler: (event: React.MouseEvent<HTMLButtonElement>) => void
-    }
-
-
-export function Header(Props: ToggleProps){
+export function Header(){
   
     
+    const createTask = (e)=>{
+        console.log('opa');
+        console.log(e);
+    };
 
 
     return (
@@ -23,8 +20,8 @@ export function Header(Props: ToggleProps){
 
                 <li className="addNewTaskInput">
                     <form  action="">
-                        <input className="taskName" type="text" placeholder="Add new task"/>
-                        <button onSubmit={Props.ClickHandler} className="submitNewTask" type="submit">
+                        <input className="taskName" type="text" placeholder="Add new task" onChange={createTask}/>
+                        <button onSubmit={createTask} className="submitNewTask" type="submit">
                             <img src="https://img.icons8.com/ios-filled/344/chevron-right.png" className="icon8icons"
                                 alt=""/>
                         </button>
