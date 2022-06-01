@@ -1,5 +1,4 @@
 const onGoingTasks = []
-const completedTasks = []
 
 function createTask(taskName) {
     const formattedTask = taskName.charAt(0).toUpperCase() + taskName.slice(1)
